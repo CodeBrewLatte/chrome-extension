@@ -14,13 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   var start = Date.now();
 
-  formSubmit.addEventListener("click", (e) => {
+  const startSomething = (e) => {
+    let i = 0;
     e.preventDefault();
     function startTimer() {
       let now = Date.now();
       let timeBetween = (future - now) / 1000;
       if (future < now) {
-        alert("Your done!");
+        if (i == 0) {
+          alert("You're done!");
+          i++;
+        }
+
+        // reset function that changes Submit button to Reset, etc.
+        formSubmit.value = "Reset";
+        //formSubmit.removeEventListener("click", startSomething);
+        return;
       }
       console.log(future, now);
 
@@ -29,20 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
       let hours = Math.floor(timeBetween / 3600) % 24;
 
       if (seconds.toString().length < 2) {
-        cdSecondDOM.innerHTML = "0" + seconds.toString();
-      } else cdSecondDOM.innerHTML = seconds;
+        cdSecondDOM.innerHTML = ":0" + seconds.toString();
+      } else cdSecondDOM.innerHTML = ":" + seconds.toString();
       if (minutes.toString().length < 2) {
-        cdMinuteDOM.innerHTML = "0" + minutes.toString();
-      } else cdMinuteDOM.innerHTML = minutes;
+        cdMinuteDOM.innerHTML = ":0" + minutes.toString();
+      } else cdMinuteDOM.innerHTML = ":" + minutes.toString();
       if (hours.toString().length < 2) {
         cdHourDOM.innerHTML = "0" + hours.toString();
       } else cdHourDOM.innerHTML = hours;
     }
     let time = select.value;
-    let timeMS = 5000; //select.value * 60 * 1000;
+    let timeMS = select.value * 60 * 1000;
     let future = Date.now() + timeMS;
-    setInterval(startTimer, 1000);
-  });
+    startTimer();
+    setInterval(startTimer, 100);
+  };
+
+  formSubmit.addEventListener("click", startSomething);
 
   const countDown = () => {
     const currentDate = Date.now() - start;

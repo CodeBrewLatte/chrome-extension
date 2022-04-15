@@ -1,1 +1,11 @@
-Temp file
+{
+  "name": "Cool Timer",
+  "version": "1.0.0",
+  "description": "Keeps track of usage of websites and has ability to stop you from spending too much time on a site",
+  "manifest_version": 3,
+  "author": "Steve & Jerikko",
+  "action":{
+      "default_popup": "index.html",
+      "default_title": "Time on current site"
+  }
+}

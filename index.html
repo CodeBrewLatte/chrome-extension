@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;500;700&family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
@@ -19,14 +22,14 @@
 
 <div class="container">
   <div class="timeonsite">
-    <p>Time on Site</p>
-    <p class="timer"><span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span></p>
+    <h2>Time on Site</h2>
+    <p class="timer white-text"><span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span></p>
   </div>
   <div class="usertimer">
     <form>
-      <label for="timers">Choose a time</label>
+      <label for="timers">Choose your timer:</label>
       <select name="timers" id="timers">
-        <option value="1">5 Minutes</option>
+        <option value=".083">5 Seconds</option>
         <option value="10">10 Minutes</option>
         <option value="15">15 Minutes</option>
         <option value="20">20 Minutes</option>
@@ -34,7 +37,7 @@
       <br><br>
       <input type="submit" value="Submit" id="formsubmit">
     </form>
-    <p class="cdtimer"><span id="cdhours"></span>:<span id="cdminutes"></span>:<span id="cdseconds"></span></p>  
+    <p class="cdtimer white-text"><span id="cdhours"></span><span id="cdminutes"></span><span id="cdseconds"></span></p>  
   </div>
 </div>
 
