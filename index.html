@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+
+<!--
+  Ideally when page is loaded, timer starts
+
+  User Input to define how long they want before 
+  dropdown
+  After time is reached, close tab or stop user
+-->
+
+<div class="container">
+  <div class="timeonsite">
+    <p>Time on Site</p>
+    <p class="timer"><span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span></p>
+  </div>
+  <div class="usertimer">
+    <form>
+      <label for="timers">Choose a time</label>
+      <select name="timers" id="timers">
+        <option value="1">5 Minutes</option>
+        <option value="10">10 Minutes</option>
+        <option value="15">15 Minutes</option>
+        <option value="20">20 Minutes</option>
+      </select>
+      <br><br>
+      <input type="submit" value="Submit" id="formsubmit">
+    </form>
+    <p class="cdtimer"><span id="cdhours"></span>:<span id="cdminutes"></span>:<span id="cdseconds"></span></p>  
+  </div>
+</div>
+
+  
+<script src="main.js"></script>
+</body>
+</html>
